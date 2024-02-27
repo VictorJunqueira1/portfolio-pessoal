@@ -10,7 +10,7 @@ export default function Home() {
                 <a href="#">Início</a>
               </li>
               <li>
-                <a href="#">Sobre o meu penis</a>
+                <a href="#">Sobre mim</a>
               </li>
               <li>
                 <a href="#">Habilidades</a>
