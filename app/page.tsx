@@ -4,19 +4,19 @@ export default function Home() {
       <div className="bg-stone-800 w-screen">
         <div className="mx-auto max-w-7xl">
           <nav className="flex items-center justify-between text-white h-24">
-            <h1>Portfólio</h1>
+            <h1 className="hover:text-green-500 hover:shadow-sm text-lg">Portfólio</h1>
             <ul className="flex flex-row gap-12 text-lg">
               <li>
-                <a href="#">Início</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm">Início</a>
               </li>
               <li>
-                <a href="#">Sobre o meu penis</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm">Sobre</a>
               </li>
               <li>
-                <a href="#">Habilidades</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm">Habilidades</a>
               </li>
               <li>
-                <a href="#">Contato</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm">Contato</a>
               </li>
             </ul>
           </nav>
@@ -26,23 +26,23 @@ export default function Home() {
               <h4 className="font-light text-white text-2xl">Olá!</h4>
               <h1 className="text-white font-semibold text-5xl">Eu sou desenvolvedor...</h1>
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
-              <a href="#" className="px-4 py-2 color-white bg-emerald-600 text-white w-max text-lg">Fale comigo</a>
+              <a href="#" className="px-4 py-2 color-white bg-emerald-700 text-white w-max text-lg">Fale comigo</a>
             </div>
 
             <div className="absolute bottom-10 left-0 text-white flex gap-6">
               <div>
-                <h5>Email</h5>
-                <p>victorjunqueira.prog@gmail.com</p>
+                <h3 className="text-lg font-semibold">Email</h3>
+                <p className="text-md font-light">victorjunqueira.prog@gmail.com</p>
               </div>
               <div className="h-18 w-0.5 bg-white"></div>
               <div>
-                <h5>Telefone</h5>
-                <p>+55 (19) 99716-8299</p>
+                <h3 className="text-lg font-semibold">Telefone</h3>
+                <p className="text-md font-light">+55 (19) 99716-8299</p>
               </div>
               <div className="h-18 w-0.5 bg-white"></div>
               <div>
-                <h5>Localização</h5>
-                <p>Mogi-Guaçu, SP</p>
+                <h3 className="text-lg font-semibold">Localização</h3>
+                <p className="text-md font-light">Mogi-Guaçu, SP</p>
               </div>
             </div>
           </section>
