@@ -10,7 +10,7 @@ export default function Home() {
                 <a href="#" className="hover:text-green-500 hover:shadow-sm">Início</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm">Sobre</a>
+                <a href="#">Sobre o meu penis</a>
               </li>
               <li>
                 <a href="#" className="hover:text-green-500 hover:shadow-sm">Habilidades</a>
