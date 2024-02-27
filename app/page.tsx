@@ -4,19 +4,19 @@ export default function Home() {
       <div className="bg-stone-800 w-screen">
         <div className="mx-auto max-w-7xl">
           <nav className="flex items-center justify-between text-white h-24">
-            <h1 className="hover:text-green-500 hover:shadow-sm text-lg">Portfólio</h1>
+            <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
             <ul className="flex flex-row gap-12 text-lg">
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm">Início</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Início</a>
               </li>
               <li>
-                <a href="#">Sobre o meu penis</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Sobre</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm">Habilidades</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Habilidades</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm">Contato</a>
+                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Contato</a>
               </li>
             </ul>
           </nav>
