@@ -1,36 +1,39 @@
-import { Coins, Database, File, Globe, Headphones, Smartphone } from "lucide-react";
+import { CarouselPlugin } from "@/components/ShadCN/CarouselPlugin";
+import { Coins, Database, File, Github, Globe, Headphones, Linkedin, Smartphone } from "lucide-react";
+import Image from "next/image";
+import { projects } from "./utils/projects";
 
 export default function Home() {
   return (
-    <div className="">
-      <div className="bg-neutral-800 w-screen">
+    <div>
+      <div className="bg-gradient-to-r from-neutral-950 to-neutral-800 w-screen">
         <div className="mx-auto max-w-7xl">
           <nav className="flex items-center justify-between text-white h-24">
             <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
             <ul className="flex flex-row gap-12 text-lg">
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Início</a>
+                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Início</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Sobre</a>
+                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Sobre</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Habilidades</a>
+                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Habilidades</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 hover:shadow-sm transition duration-300 ease-in">Contato</a>
+                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Contato</a>
               </li>
             </ul>
           </nav>
 
-          <section className="w-full h-dynamic flex justify-center items-start flex-col relative">
+          <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative">
             <div className="flex flex-col gap-2 -mt-24">
               <h4 className="font-light text-white text-2xl">Olá!</h4>
               <h1 className="text-white font-semibold text-5xl">Eu sou desenvolvedor...</h1>
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
               <div className="gap-6 flex">
-                <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="px-4 py-2 color-white rounded-sm bg-green-500 text-black w-max text-lg">LinkedIn</a>
-                <a href="https://github.com/VictorJunqueira1" className="px-4 py-2 color-white rounded-sm bg-green-500 text-black w-max text-lg">Github</a>
+                <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="w-36 border-gray-400 hover:border-black hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
+                <a href="https://github.com/VictorJunqueira1" className="w-36 border-gray-400 border-2 hover:bg-black hover:border-black transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div> <Github></Github> </div>Github</a>
               </div>
             </div>
 
@@ -116,15 +119,55 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="w-full bg-neutral-950 h-max">
+          <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
+            <div className="w-full h-full">
+              <h1 className="text-3xl font-semibold">Tecnologias</h1>
+              <div className="grid grid-cols-3 gap-4 my-4">
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={100} height={100} src={"/img/javascript.png"} alt="" />
+                  <p className="text-xl">Javascript</p>
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={100} height={100} src={"/img/typescript.png"} alt="" />
+                  <p className="text-xl">Typescript</p>
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={100} height={100} src={"/img/react.png"} alt="" />
+                  <p className="text-xl">ReactJS</p>
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={100} height={100} src={"/img/next.png"} alt="" />
+                  <p className="text-xl">NextJS</p>
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={100} height={100} src={"/img/tailwind.png"} alt="" />
+                  <p className="text-xl">TailwindCSS</p>
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={200} height={200} src={"/img/sql.png"} alt="" />
+                  <p className="text-xl">SQL</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full bg-neutral-900 h-max">
+          <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
+            <div className="w-full h-full">
+              <h1 className="text-3xl font-semibold">Projetos</h1>
+              <div className="flex items-center justify-center flex-col my-4">
+                <CarouselPlugin projects={projects} />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
 }
 
-// Botões Github e LinkedIn
-// Tecnologias
 // Projetos
-// Futuras formações
 // Área de Contato
 
 // Funcionalidades de Rolagem (cabeçalho)
