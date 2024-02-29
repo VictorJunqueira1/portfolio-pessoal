@@ -1,9 +1,9 @@
-import { Coins, Database, File, Globe, Headphones, LineChart, Smartphone } from "lucide-react";
+import { Coins, Database, File, Globe, Headphones, Smartphone } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="">
-      <div className="bg-stone-800 w-screen">
+      <div className="bg-neutral-800 w-screen">
         <div className="mx-auto max-w-7xl">
           <nav className="flex items-center justify-between text-white h-24">
             <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
@@ -28,7 +28,10 @@ export default function Home() {
               <h4 className="font-light text-white text-2xl">Olá!</h4>
               <h1 className="text-white font-semibold text-5xl">Eu sou desenvolvedor...</h1>
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
-              <a href="#" className="px-4 py-2 color-white rounded-sm bg-green-500 text-black w-max text-lg">Fale comigo</a>
+              <div className="gap-6 flex">
+                <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="px-4 py-2 color-white rounded-sm bg-green-500 text-black w-max text-lg">LinkedIn</a>
+                <a href="https://github.com/VictorJunqueira1" className="px-4 py-2 color-white rounded-sm bg-green-500 text-black w-max text-lg">Github</a>
+              </div>
             </div>
 
             <div className="absolute bottom-10 left-0 text-white flex gap-6">
@@ -59,7 +62,7 @@ export default function Home() {
             <div className="text-white w-2/3 ml-12">
               <h2 className="text-green-500 text-xl mb-2">Sobre mim</h2>
               <h1 className="font-semibold text-2xl mb-2">Eu sou Victor Junqueira, sou desenvolvedor front-end...</h1>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, eos accusamus dicta magnam cum a voluptas cumque, incidunt, at non perferendis iusto distinctio! Non sit amet vitae magnam quibusdam commodi?</p>
+              <p>Olá! Meu nome é Victor Gustavo Junqueira, e estou trilhando meu caminho no empolgante mundo da tecnologia. Ainda estou nos estágios iniciais da minha carreira, sem experiência profissional direta na área, mas trago comigo um conjunto robusto de habilidades técnicas desenvolvidas através do meu curso tecnólogo em Análise e Desenvolvimento de Sistemas na ETEC Pedro Ferreira Alves, além de aprimoramento contínuo por meio de cursos na plataforma B7WEB, focada em desenvolvimento web e mobile.</p>
               <div className="h-0.5 w-full bg-green-500 my-6"></div>
 
               <div className="grid grid-cols-2 mb-6 gap-3">
@@ -117,3 +120,13 @@ export default function Home() {
     </div>
   );
 }
+
+// Botões Github e LinkedIn
+// Tecnologias
+// Projetos
+// Futuras formações
+// Área de Contato
+
+// Funcionalidades de Rolagem (cabeçalho)
+// Reescrita no desenvolvedor
+// Rever textos escritos
