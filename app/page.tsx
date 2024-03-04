@@ -123,7 +123,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Tecnologias</h1>
-              <div className="grid grid-cols-3 gap-4 my-4">
+              <div className="grid grid-cols-6 gap-4 my-4">
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={100} height={100} src={"/img/javascript.png"} alt="" />
                   <p className="text-xl">Javascript</p>
@@ -145,14 +145,14 @@ export default function Home() {
                   <p className="text-xl">TailwindCSS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={200} height={200} src={"/img/sql.png"} alt="" />
+                  <Image width={100} height={100} src={"/img/sql.png"} alt="" />
                   <p className="text-xl">SQL</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section className="w-full bg-neutral-900 h-max">
+        <section className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Projetos</h1>
@@ -167,9 +167,11 @@ export default function Home() {
   );
 }
 
-// Projetos
+// Linha na área de tecnologias
+// Projetos, Carousel
 // Área de Contato
 
 // Funcionalidades de Rolagem (cabeçalho)
 // Reescrita no desenvolvedor
 // Rever textos escritos
+// Responsividade
