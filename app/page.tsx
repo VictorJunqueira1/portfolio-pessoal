@@ -32,8 +32,8 @@ export default function Home() {
               <h1 className="text-white font-semibold text-5xl">Eu sou desenvolvedor...</h1>
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
               <div className="gap-6 flex">
-                <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="w-36 border-gray-400 hover:border-black hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
-                <a href="https://github.com/VictorJunqueira1" className="w-36 border-gray-400 border-2 hover:bg-black hover:border-black transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div> <Github></Github> </div>Github</a>
+                <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="w-36 shadow-md hover:shadow-stone-700 border-gray-400 hover:border-black hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
+                <a href="https://github.com/VictorJunqueira1" className="w-36 shadow-md hover:shadow-stone-700 border-gray-400 border-2 hover:bg-black hover:border-black transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div> <Github></Github> </div>Github</a>
               </div>
             </div>
 
@@ -145,7 +145,7 @@ export default function Home() {
                   <p className="text-xl">TailwindCSS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/sql.png"} alt="" />
+                  <Image width={999} height={999} src={"/img/sql.png"} alt="" />
                   <p className="text-xl">SQL</p>
                 </div>
               </div>
@@ -158,6 +158,36 @@ export default function Home() {
               <h1 className="text-3xl font-semibold">Projetos</h1>
               <div className="flex items-center justify-center flex-col my-4">
                 <CarouselPlugin projects={projects} />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full bg-neutral-900 h-max">
+          <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
+            <div className="w-full h-full">
+              <h1 className="text-5xl">Contato</h1>
+              <p className="mt-6 text-xl flex-col flex">Bem-vindo à seção de contato! <span className="mt-1">Se gostou do meu trabalho, é só me chamar!  </span></p>
+              <div className="mt-10">
+                <form action="" className="">
+                  <div>
+                    Nome:
+                    <input type="password" placeholder="Insira sua senha" className="p-2 rounded-md mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                  </div>
+                  <div>
+                    Sobrenome:
+                    <input type="password" placeholder="Insira sua senha" className="p-2 rounded-md mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                  </div>
+                  <div>
+                    Email:
+                    <input type="email" placeholder="Insira seu email" className="p-2 rounded-md mb-6 mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                  </div>
+                  <div>
+                    Senha:
+                    <input type="password" placeholder="Insira sua senha" className="p-2 rounded-md mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                  </div>
+                </form>
+                <a href="#" className="w-36 border-gray-400 hover:border-green-700 hover:bg-neutral-950 shadow-md hover:shadow-stone-700 border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4">Enviar</a>
+
               </div>
             </div>
           </div>
