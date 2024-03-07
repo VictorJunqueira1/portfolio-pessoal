@@ -5,6 +5,8 @@ import Image from "next/image";
 import { projects } from "./utils/projects";
 import { useEffect, useState } from 'react';
 
+// EFEITO ESCRITA //
+
 const TypewriterEffect = ({ phrases, loop = true }) => {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -20,18 +22,28 @@ const TypewriterEffect = ({ phrases, loop = true }) => {
 
   useEffect(() => {
     if (index >= phrases.length && !loop) return;
+
     if (subIndex === phrases[index].length + 1 && !reverse) {
       setReverse(true);
       return;
     }
+
     if (subIndex === 0 && reverse) {
       setReverse(false);
-      setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      setIndex(prevIndex => (prevIndex + 1) % phrases.length);
       return;
     }
+
+    const calculateDelay = () => {
+      if (reverse) return 75;
+      if (subIndex === phrases[index].length) return 1000;
+      return Math.random() * 350 + 150;
+    };
+
     const timeout = setTimeout(() => {
-      setSubIndex((prevSubIndex) => prevSubIndex + (reverse ? -1 : 1));
-    }, Math.max(reverse ? 75 : subIndex === phrases[index].length ? 1000 : 150, parseInt(Math.random() * 350)));
+      setSubIndex(prevSubIndex => prevSubIndex + (reverse ? -1 : 1));
+    }, calculateDelay());
+
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse, phrases, loop]);
 
@@ -42,7 +54,9 @@ const TypewriterEffect = ({ phrases, loop = true }) => {
   );
 };
 
-export default function Home() {
+// VALIDAÇÃO DO FORMULÁRIO //
+
+export function Home() {
   useEffect(() => {
     const removeHashFromUrl = () => {
       const urlWithoutHash = window.location.href.split('#')[0];
@@ -52,30 +66,68 @@ export default function Home() {
       removeHashFromUrl();
     }
   }, []);
+}
 
+
+export default function ContactForm() {
+  const [name, setName] = useState('');
+  const [lastname, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  
+  const validateEmail = (email: string) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+  
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    
+    if (!name || !lastname || !email || !password) {
+      setError('Por favor, preencha todos os campos.');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setError('Por favor, insira um email válido.');
+      return;
+    }
+    
+    setError('');
+    alert('Formulário enviado com sucesso!');
+    setName('');
+    setLastName('');
+    setEmail('');
+    setPassword('');
+  };
+  
+  // CÓDIGO DO PORTFÓLIO //
+  
   return (
     <div className="flex-wrap">
       <div className="bg-gradient-to-r from-neutral-950 to-neutral-900 w-screen">
         <div className="mx-auto max-w-7xl">
-          <nav className="flex items-center justify-between text-white h-24">
-            <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
-            <ul className="flex flex-row gap-12 text-lg">
-              <li>
-                <a href="#inicio" className="hover:text-green-500 transition duration-300 ease-in">Início</a>
-              </li>
-              <li>
-                <a href="#sobre" className="hover:text-green-500 transition duration-300 ease-in">Sobre</a>
-              </li>
-              <li>
-                <a href="#habilidades" className="hover:text-green-500 transition duration-300 ease-in">Habilidades</a>
-              </li>
-              <li>
-                <a href="#contato" className="hover:text-green-500 transition duration-300 ease-in">Contato</a>
-              </li>
-            </ul>
-
-          </nav>
-
+          {/* // CABEÇALHO // */}
+          <header>
+            <nav className="flex items-center justify-between text-white h-24">
+              <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
+              <ul className="flex flex-row gap-12 text-lg">
+                <li>
+                  <a href="#inicio" className="hover:text-green-500 transition duration-300 ease-in">Início</a>
+                </li>
+                <li>
+                  <a href="#sobre" className="hover:text-green-500 transition duration-300 ease-in">Sobre</a>
+                </li>
+                <li>
+                  <a href="#habilidades" className="hover:text-green-500 transition duration-300 ease-in">Habilidades</a>
+                </li>
+                <li>
+                  <a href="#contato" className="hover:text-green-500 transition duration-300 ease-in">Contato</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          {/* // CORPO DO CABEÇALHO // */}
           <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative">
             <div className="flex flex-col gap-2 -mt-24">
               <h4 className="font-light text-white text-2xl">Olá!</h4>
@@ -86,7 +138,7 @@ export default function Home() {
                 <a href="https://github.com/VictorJunqueira1" className=" hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 border-2 hover:bg-black transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div> <Github></Github> </div>Github</a>
               </div>
             </div>
-
+            {/* // RODAPÉ DO CABEÇALHO // */}
             <div className="absolute bottom-10 left-0 text-white flex gap-6">
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
@@ -105,31 +157,31 @@ export default function Home() {
             </div>
           </section>
         </div>
-
+        {/* // CUSTOMIZAÇÃO DA IMAGEM // */}
         <section id="sobre" className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12">
             <div className="text-white w-1/3 ">
               <img src="/img/Profile.jpeg" alt="Perfil do Autor" className="w-full h-96 object-cover" />
             </div>
-
+            {/* ÁREA SOBRE O DESENVOLVEDOR  */}
             <div className="text-white w-2/3 ml-12">
               <h2 className="text-green-500 text-xl mb-2">Sobre mim</h2>
               <h1 className="font-semibold text-2xl mb-2">Eu sou Victor Junqueira, sou desenvolvedor front-end...</h1>
               <p>Olá! Meu nome é Victor Gustavo Junqueira, e estou trilhando meu caminho no empolgante mundo da tecnologia. Ainda estou nos estágios iniciais da minha carreira, sem experiência profissional direta na área, mas trago comigo um conjunto robusto de habilidades técnicas desenvolvidas através do meu curso tecnólogo em Análise e Desenvolvimento de Sistemas na ETEC Pedro Ferreira Alves, além de aprimoramento contínuo por meio de cursos na plataforma B7WEB, focada em desenvolvimento web e mobile.</p>
+              {/* ÁREA DE INFORMAÇÕES E CONTATO  */}
               <div className="h-0.5 w-full bg-green-500 my-6"></div>
-
               <div className="grid grid-cols-2 mb-6 gap-3">
                 <h3 className="text-white"><strong>Nome: </strong>Victor Junqueira</h3>
                 <h3 className="text-white"><strong>Idade: </strong>17 anos</h3>
                 <h3 className="text-white"><strong>Email: </strong>victorjunqueira.prog@gmail.com</h3>
                 <h3 className="text-white"><strong>Telefone: </strong>+55 (19) 99716-8299</h3>
               </div>
-
+              {/* LINK PARA DOWNLOAD DO CURRÍCULO */}
               <a href="#" className="px-4 py-2 color-white rounded-sm bg-green-500 text-black w-max text-lg">Download CV</a>
-
             </div>
           </div>
         </section>
+        {/* SERVIÇOS OFERECIDOS  */}
         <section className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
@@ -169,40 +221,41 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        {/* TECNOLOGIAS EM CONHECIMENTO */}
         <section id="habilidades" className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Tecnologias</h1>
               <div className="grid grid-cols-6 gap-4 my-4">
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/javascript.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/javascript.png"} alt="Javascript" />
                   <p className="text-xl">Javascript</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/typescript.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/typescript.png"} alt="Typescript" />
                   <p className="text-xl">Typescript</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/react.png"} alt="" />
+                  <Image width={100} height={100} src={"/img/react.png"} alt="ReactJS" />
                   <p className="text-xl">ReactJS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/next.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/next.png"} alt="NextJS" />
                   <p className="text-xl">NextJS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/tailwind.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/tailwind.png"} alt="TailwindCSS" />
                   <p className="text-xl">TailwindCSS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={65} height={65} src={"/img/sql.png"} alt="" />
+                  <Image width={65} height={65} src={"/img/sql.png"} alt="SQL" />
                   <p className="text-xl">SQL</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        {/* ÁREA DE PROJETOS */}
         <section className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
@@ -213,36 +266,38 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        {/* ÁREA DE FORMULÁRIO E CONTATO */}
         <section id="contato" className="w-full bg-neutral-900 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-5xl">Contato</h1>
-              <p className="mt-6 text-xl flex-col flex">Bem-vindo à seção de contato! <span className="mt-1">Se gostou do meu trabalho, é só me chamar!  </span></p>
+              <p className="mt-6 text-xl flex-col flex">Bem-vindo à seção de contato! <span className="mt-1">Se gostou do meu trabalho, é só me chamar!</span></p>
               <div className="mt-10">
-                <form action="" className="">
+                {error && <p className="text-red-500">{error}</p>}
+                <form action="#" onSubmit={handleSubmit} className="">
                   <div>
                     Nome:
-                    <input type="password" placeholder="Insira sua senha" className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
+                    <input type="text" placeholder="Insira seu nome" value={name} onChange={e => setName(e.target.value)} className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
                   </div>
                   <div>
                     Sobrenome:
-                    <input type="password" placeholder="Insira sua senha" className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
+                    <input type="text" placeholder="Insira seu sobrenome" value={lastname} onChange={e => setLastName(e.target.value)} className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
                   </div>
                   <div>
                     Email:
-                    <input type="email" placeholder="Insira seu email" className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
+                    <input type="email" placeholder="Insira seu email" value={email} onChange={e => setEmail(e.target.value)} className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
                   </div>
                   <div>
                     Senha:
-                    <input type="password" placeholder="Insira sua senha" className="p-2 mb-10 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none " />
+                    <input type="password" placeholder="Insira sua senha" value={password} onChange={e => setPassword(e.target.value)} className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
                   </div>
+                  <button type="submit" className="w-36 border-gray-400 hover:border-green-700 hover:bg-neutral-950 shadow-md hover:shadow-stone-700 border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4">Enviar</button>
                 </form>
-                <a href="#" className="w-36 border-gray-400 hover:border-green-700 hover:bg-neutral-950 shadow-md hover:shadow-stone-700 border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4">Enviar</a>
               </div>
             </div>
           </div>
         </section>
+        {/* RODAPÉ */}
         <nav>
           <footer className="bg-neutral-950 text-white py-6 flex-wrap">
             <div className="container mx-auto px-4">
