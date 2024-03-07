@@ -5,8 +5,8 @@ import { projects } from "./utils/projects";
 
 export default function Home() {
   return (
-    <div>
-      <div className="bg-gradient-to-r from-neutral-950 to-neutral-800 w-screen">
+    <div className="flex-wrap">
+      <div className="bg-gradient-to-r from-neutral-950 to-neutral-900 w-screen">
         <div className="mx-auto max-w-7xl">
           <nav className="flex items-center justify-between text-white h-24">
             <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
@@ -32,8 +32,8 @@ export default function Home() {
               <h1 className="text-white font-semibold text-5xl">Eu sou desenvolvedor...</h1>
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
               <div className="gap-6 flex">
-                <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="w-36 shadow-md hover:shadow-stone-700 border-gray-400 hover:border-black hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
-                <a href="https://github.com/VictorJunqueira1" className="w-36 shadow-md hover:shadow-stone-700 border-gray-400 border-2 hover:bg-black hover:border-black transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div> <Github></Github> </div>Github</a>
+                <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className=" hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
+                <a href="https://github.com/VictorJunqueira1" className=" hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 border-2 hover:bg-black transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div> <Github></Github> </div>Github</a>
               </div>
             </div>
 
@@ -125,11 +125,11 @@ export default function Home() {
               <h1 className="text-3xl font-semibold">Tecnologias</h1>
               <div className="grid grid-cols-6 gap-4 my-4">
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/javascript.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/javascript.png"} alt="" />
                   <p className="text-xl">Javascript</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/typescript.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/typescript.png"} alt="" />
                   <p className="text-xl">Typescript</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
@@ -137,15 +137,15 @@ export default function Home() {
                   <p className="text-xl">ReactJS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/next.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/next.png"} alt="" />
                   <p className="text-xl">NextJS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/tailwind.png"} alt="" />
+                  <Image width={90} height={90} src={"/img/tailwind.png"} alt="" />
                   <p className="text-xl">TailwindCSS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={999} height={999} src={"/img/sql.png"} alt="" />
+                  <Image width={65} height={65} src={"/img/sql.png"} alt="" />
                   <p className="text-xl">SQL</p>
                 </div>
               </div>
@@ -171,27 +171,45 @@ export default function Home() {
                 <form action="" className="">
                   <div>
                     Nome:
-                    <input type="password" placeholder="Insira sua senha" className="p-2 rounded-md mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                    <input type="password" placeholder="Insira sua senha" className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
                   </div>
                   <div>
                     Sobrenome:
-                    <input type="password" placeholder="Insira sua senha" className="p-2 rounded-md mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                    <input type="password" placeholder="Insira sua senha" className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
                   </div>
                   <div>
                     Email:
-                    <input type="email" placeholder="Insira seu email" className="p-2 rounded-md mb-6 mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                    <input type="email" placeholder="Insira seu email" className="p-2 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none mb-10" />
                   </div>
                   <div>
                     Senha:
-                    <input type="password" placeholder="Insira sua senha" className="p-2 rounded-md mt-2 flex flex-col bg-transparent border-b-2 hover:border-green-500 text-white" />
+                    <input type="password" placeholder="Insira sua senha" className="p-2 mb-10 mt-2 flex flex-col bg-transparent border-b hover:border-green-500 text-white focus:border-green-500 focus:outline-none " />
                   </div>
                 </form>
                 <a href="#" className="w-36 border-gray-400 hover:border-green-700 hover:bg-neutral-950 shadow-md hover:shadow-stone-700 border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4">Enviar</a>
-
               </div>
             </div>
           </div>
         </section>
+        <nav>
+          <footer className="bg-neutral-950 text-white py-6 flex-wrap">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-wrap justify-between items-center">
+                <div className="text-lg">
+                  <p>© 2024 Victor Junqueira. Todos os direitos reservados.</p>
+                </div>
+                <div className="text-lg">
+                  <p>Contato: <a href="mailto:victorjunqueira.prog@gmail.com" className="text-white transition duration-500 hover:text-green-500">victorjunqueira.prog@gmail.com</a></p>
+                </div>
+                <div>
+                  <a href="#" className="text-white transition duration-500 mx-2 hover:text-green-500">Página Inicial</a>
+                  <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="text-white transition duration-500 mx-2 hover:text-green-500">LinkedIn</a>
+                  <a href="https://github.com/VictorJunqueira1" className="text-white transition duration-500 mx-2 hover:text-green-500">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </nav>
       </div>
     </div>
   );
