@@ -1,9 +1,58 @@
+"use client"
 import { CarouselPlugin } from "@/components/ShadCN/CarouselPlugin";
 import { Coins, Database, File, Github, Globe, Headphones, Linkedin, Smartphone } from "lucide-react";
 import Image from "next/image";
 import { projects } from "./utils/projects";
+import { useEffect, useState } from 'react';
+
+const TypewriterEffect = ({ phrases, loop = true }) => {
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
+  const [blink, setBlink] = useState(true);
+
+  useEffect(() => {
+    const blinkInterval = setInterval(() => {
+      setBlink((prev) => !prev);
+    }, 500);
+    return () => clearInterval(blinkInterval);
+  }, []);
+
+  useEffect(() => {
+    if (index >= phrases.length && !loop) return;
+    if (subIndex === phrases[index].length + 1 && !reverse) {
+      setReverse(true);
+      return;
+    }
+    if (subIndex === 0 && reverse) {
+      setReverse(false);
+      setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      return;
+    }
+    const timeout = setTimeout(() => {
+      setSubIndex((prevSubIndex) => prevSubIndex + (reverse ? -1 : 1));
+    }, Math.max(reverse ? 75 : subIndex === phrases[index].length ? 1000 : 150, parseInt(Math.random() * 350)));
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, reverse, phrases, loop]);
+
+  return (
+    <h1 className="text-white font-semibold text-5xl">
+      Eu sou <span>{`${phrases[index].substring(0, subIndex)}${blink ? "|" : " "}`}</span>
+    </h1>
+  );
+};
 
 export default function Home() {
+  useEffect(() => {
+    const removeHashFromUrl = () => {
+      const urlWithoutHash = window.location.href.split('#')[0];
+      window.history.replaceState({}, document.title, urlWithoutHash);
+    };
+    if (window.location.hash) {
+      removeHashFromUrl();
+    }
+  }, []);
+
   return (
     <div className="flex-wrap">
       <div className="bg-gradient-to-r from-neutral-950 to-neutral-900 w-screen">
@@ -12,24 +61,25 @@ export default function Home() {
             <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
             <ul className="flex flex-row gap-12 text-lg">
               <li>
-                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Início</a>
+                <a href="#inicio" className="hover:text-green-500 transition duration-300 ease-in">Início</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Sobre</a>
+                <a href="#sobre" className="hover:text-green-500 transition duration-300 ease-in">Sobre</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Habilidades</a>
+                <a href="#habilidades" className="hover:text-green-500 transition duration-300 ease-in">Habilidades</a>
               </li>
               <li>
-                <a href="#" className="hover:text-green-500 transition duration-300 ease-in">Contato</a>
+                <a href="#contato" className="hover:text-green-500 transition duration-300 ease-in">Contato</a>
               </li>
             </ul>
+
           </nav>
 
           <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative">
             <div className="flex flex-col gap-2 -mt-24">
               <h4 className="font-light text-white text-2xl">Olá!</h4>
-              <h1 className="text-white font-semibold text-5xl">Eu sou desenvolvedor...</h1>
+              <TypewriterEffect phrases={['desenvolvedor Web', 'desenvolvedor Mobile', 'Front-End']} />
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
               <div className="gap-6 flex">
                 <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className=" hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
@@ -56,7 +106,7 @@ export default function Home() {
           </section>
         </div>
 
-        <section className="w-full bg-neutral-950 h-max">
+        <section id="sobre" className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12">
             <div className="text-white w-1/3 ">
               <img src="/img/Profile.jpeg" alt="Perfil do Autor" className="w-full h-96 object-cover" />
@@ -119,7 +169,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-neutral-950 h-max">
+
+        <section id="habilidades" className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Tecnologias</h1>
@@ -162,7 +213,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-neutral-900 h-max">
+
+        <section id="contato" className="w-full bg-neutral-900 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-5xl">Contato</h1>
@@ -217,9 +269,6 @@ export default function Home() {
 
 // Linha na área de tecnologias
 // Projetos, Carousel
-// Área de Contato
 
-// Funcionalidades de Rolagem (cabeçalho)
-// Reescrita no desenvolvedor
 // Rever textos escritos
 // Responsividade
