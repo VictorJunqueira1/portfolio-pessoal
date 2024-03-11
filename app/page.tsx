@@ -7,7 +7,12 @@ import { useEffect, useState } from 'react';
 
 // EFEITO ESCRITA //
 
-const TypewriterEffect = ({ phrases, loop = true }) => {
+type props = {
+  phrases: string[];
+  loop: boolean;
+}
+
+const TypewriterEffect = ({ phrases, loop = true }: props) => {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
@@ -131,7 +136,7 @@ export default function ContactForm() {
           <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative">
             <div className="flex flex-col gap-2 -mt-24">
               <h4 className="font-light text-white text-2xl">Olá!</h4>
-              <TypewriterEffect phrases={['desenvolvedor Web', 'desenvolvedor Mobile', 'Front-End']} />
+              <TypewriterEffect phrases={['desenvolvedor Web', 'desenvolvedor Mobile', 'Front-End']} loop={false} />
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
               <div className="gap-6 flex">
                 <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className=" hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
