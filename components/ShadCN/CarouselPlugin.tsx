@@ -1,6 +1,5 @@
 "use client"
 import * as React from "react"
-import Autoplay from "embla-carousel-autoplay"
 import {
     Carousel,
     CarouselContent,
@@ -10,7 +9,6 @@ import {
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "../ui/card";
 import { Project } from "@/app/utils/projects";
-import Image from "next/image";
 
 type Props = {
     projects: Project[]
@@ -48,4 +46,7 @@ export function CarouselPlugin({ projects }: Props) {
             <CarouselNext />
         </Carousel>
     )
+}
+function Autoplay(arg0: { delay: number; stopOnInteraction: boolean; }): any {
+    throw new Error("Function not implemented.");
 }

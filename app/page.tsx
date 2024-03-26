@@ -4,6 +4,7 @@ import { Coins, Database, File, Github, Globe, Headphones, Linkedin, Smartphone 
 import Image from "next/image";
 import { projects } from "./utils/projects";
 import { useEffect, useState } from 'react';
+import { CarouselSpacing } from "@/components/ShadCN/CarouselSpacing";
 
 // EFEITO ESCRITA //
 
@@ -80,24 +81,24 @@ export default function ContactForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  
+
   const validateEmail = (email: string) => {
     return /\S+@\S+\.\S+/.test(email);
   };
-  
+
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    
+
     if (!name || !lastname || !email || !password) {
       setError('Por favor, preencha todos os campos.');
       return;
     }
-    
+
     if (!validateEmail(email)) {
       setError('Por favor, insira um email válido.');
       return;
     }
-    
+
     setError('');
     alert('Formulário enviado com sucesso!');
     setName('');
@@ -105,9 +106,9 @@ export default function ContactForm() {
     setEmail('');
     setPassword('');
   };
-  
+
   // CÓDIGO DO PORTFÓLIO //
-  
+
   return (
     <div className="flex-wrap">
       <div className="bg-gradient-to-r from-neutral-950 to-neutral-900 w-screen">
@@ -136,7 +137,7 @@ export default function ContactForm() {
           <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative">
             <div className="flex flex-col gap-2 -mt-24">
               <h4 className="font-light text-white text-2xl">Olá!</h4>
-              <TypewriterEffect phrases={['desenvolvedor Web', 'desenvolvedor Mobile', 'Front-End']} loop={false} />
+              <TypewriterEffect phrases={['desenvolvedor web', 'desenvolvedor mobile', 'desenvolvedor Front-End']} loop={false} />
               <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
               <div className="gap-6 flex">
                 <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className=" hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center color-white rounded-sm bg-transparent text-white text-lg gap-4"> <div className=""> <Linkedin> </Linkedin></div>  LinkedIn</a>
@@ -147,12 +148,12 @@ export default function ContactForm() {
             <div className="absolute bottom-10 left-0 text-white flex gap-6">
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
-                <p className="text-md font-light">victorjunqueira.prog@gmail.com</p>
+                <a href="mailto:victorjunqueira.prog@gmail.com" className="text-md font-light">victorjunqueira.prog@gmail.com</a>
               </div>
               <div className="h-18 w-0.5 bg-white"></div>
               <div>
                 <h3 className="text-lg font-semibold">Telefone</h3>
-                <p className="text-md font-light">+55 (19) 99716-8299</p>
+                <a href="tel:+55 (19) 997116-8299" className="text-md font-light">+55 (19) 99716-8299</a>
               </div>
               <div className="h-18 w-0.5 bg-white"></div>
               <div>
@@ -171,18 +172,26 @@ export default function ContactForm() {
             {/* ÁREA SOBRE O DESENVOLVEDOR  */}
             <div className="text-white w-2/3 ml-12">
               <h2 className="text-green-500 text-xl mb-2">Sobre mim</h2>
-              <h1 className="font-semibold text-2xl mb-2">Eu sou Victor Junqueira, sou desenvolvedor front-end...</h1>
-              <p>Olá! Meu nome é Victor Gustavo Junqueira, e estou trilhando meu caminho no empolgante mundo da tecnologia. Ainda estou nos estágios iniciais da minha carreira, sem experiência profissional direta na área, mas trago comigo um conjunto robusto de habilidades técnicas desenvolvidas através do meu curso tecnólogo em Análise e Desenvolvimento de Sistemas na ETEC Pedro Ferreira Alves, além de aprimoramento contínuo por meio de cursos na plataforma B7WEB, focada em desenvolvimento web e mobile.</p>
+              <h1 className="font-semibold text-2xl mb-2">Eu sou Victor Junqueira, desenvolvedor front-end...</h1>
+              <p>
+                Sou um desenvolvedor front-end, cujo interesse pelo desenvolvimento web foi despertado em 2022, quando iniciei meu curso de Desenvolvimento de Sistemas na prestigiosa ETEC Pedro Ferreira Alves. Apesar de estar no início da minha jornada profissional, já demonstro uma compreensão aprofundada e habilidades avançadas em tecnologias fundamentais para o setor.
+                <br />
+                <br />
+                Para enriquecer minha formação, dedico-me a cursos especializados na B7Web, uma instituição de renome por seu foco intensivo em desenvolvimento web e mobile. Essa busca constante por aprimoramento evidencia meu compromisso com a excelência e minha paixão por inovação.
+                <br />
+                <br />
+                Aliando minha expertise técnica à determinação constante por evolução, preparado para contribuir de maneira significativa e trilhar um caminho distinto no mundo da tecnologia.
+              </p>
               {/* ÁREA DE INFORMAÇÕES E CONTATO  */}
               <div className="h-0.5 w-full bg-green-500 my-6"></div>
               <div className="grid grid-cols-2 mb-6 gap-3">
-                <h3 className="text-white"><strong>Nome: </strong>Victor Junqueira</h3>
+                <h3 className="text-white"><strong>Nome: </strong>Victor Gustavo Junqueira</h3>
                 <h3 className="text-white"><strong>Idade: </strong>17 anos</h3>
-                <h3 className="text-white"><strong>Email: </strong>victorjunqueira.prog@gmail.com</h3>
-                <h3 className="text-white"><strong>Telefone: </strong>+55 (19) 99716-8299</h3>
+                <h3 className="text-white"><strong>Objetivo: </strong>Estágio</h3>
+                <h3 className="text-white"><strong>Área: </strong>Front-End</h3>
               </div>
               {/* LINK PARA DOWNLOAD DO CURRÍCULO */}
-              <a href="#" className="px-4 py-2 color-white rounded-sm bg-green-500 text-black w-max text-lg">Download CV</a>
+              <a href="#" className="px-4 py-2 rounded-sm bg-green-500 text-black text-lg hover:text-neutral-00 transition-all duration-300">Download CV</a>
             </div>
           </div>
         </section>
@@ -232,6 +241,14 @@ export default function ContactForm() {
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Tecnologias</h1>
               <div className="grid grid-cols-6 gap-4 my-4">
+                {/* <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={90} height={90} src={"/img/html-logo.png"} alt="HTML5" />
+                  <p className="text-xl">HTML5</p>
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={90} height={90} src={"/img/css-logo.png"} alt="CSS3" />
+                  <p className="text-xl">CSS3</p>
+                </div> */}
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={90} src={"/img/javascript.png"} alt="Javascript" />
                   <p className="text-xl">Javascript</p>
@@ -240,9 +257,9 @@ export default function ContactForm() {
                   <Image width={90} height={90} src={"/img/typescript.png"} alt="Typescript" />
                   <p className="text-xl">Typescript</p>
                 </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/react.png"} alt="ReactJS" />
-                  <p className="text-xl">ReactJS</p>
+                <div className="h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={95} height={100} src={"/img/react.png"} alt="ReactJS" />
+                  <p className="mt-2 text-xl">ReactJS</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={90} src={"/img/next.png"} alt="NextJS" />
@@ -252,10 +269,22 @@ export default function ContactForm() {
                   <Image width={90} height={90} src={"/img/tailwind.png"} alt="TailwindCSS" />
                   <p className="text-xl">TailwindCSS</p>
                 </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={65} height={65} src={"/img/sql.png"} alt="SQL" />
-                  <p className="text-xl">SQL</p>
+                <div className="h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={70} height={70} src={"/img/mysql.png"} alt="SQL" />
+                  <p className="mt-4 text-xl">MySQL</p>
                 </div>
+                {/* <div className="h-full w-full bg-neutral-900  rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={100} height={100} src={"/img/postgresql.png"} alt="SQL" />
+                  <p className="mt-2 text-xl">PostgreSQL</p>
+                </div> */}
+                {/* <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={90} height={70} src={"/img/git-logo.png"} alt="SQL" />
+                  <p className="mt-2 text-xl">Git</p>
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                  <Image width={90} height={90} src={"/img/github-logo.png"} alt="SQL" />
+                  <p className="mt-2 text-xl">Github</p>
+                </div> */}
               </div>
             </div>
           </div>
@@ -266,7 +295,7 @@ export default function ContactForm() {
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Projetos</h1>
               <div className="flex items-center justify-center flex-col my-4">
-                <CarouselPlugin projects={projects} />
+                <CarouselSpacing projects={projects} />
               </div>
             </div>
           </div>
