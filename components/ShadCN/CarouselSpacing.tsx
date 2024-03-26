@@ -24,13 +24,13 @@ export function CarouselSpacing({ projects }: Props) {
     return (
         <Carousel className="w-full max-w-xl">
             <CarouselContent className="-ml-1">
-                {Array.from({ length: 5 }).map((_, index) => (
-                    <CarouselItem key={index} className="pl-1 basis-1/3">
+                {projects.map((project, index) => (
+                    <CarouselItem key={index} className="pl-1">
                         <div className="p-1">
                             <Card>
-                                <CardContent className="flex aspect-square items-center justify-center p-6">
-                                    <span className="text-4xl font-semibold">{projects.name}</span>
-                                    <img className="inset-0 absolute" src="" alt="" />
+                                <CardContent className="flex aspect-square items-center justify-center p-6 relative">
+                                    <span className="text-4xl font-semibold">{project.name}</span>
+                                    <img className="inset-0 absolute w-full h-full rounded-md object-cover" src={project.image} alt="" width={500} height={500}/>
                                 </CardContent>
                             </Card>
                         </div>

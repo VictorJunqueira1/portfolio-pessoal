@@ -5,6 +5,8 @@ import Image from "next/image";
 import { projects } from "./utils/projects";
 import { useEffect, useState } from 'react';
 import { CarouselSpacing } from "@/components/ShadCN/CarouselSpacing";
+import { Drawer, DrawerClose, DrawerContent } from "@/components/ui/drawer";
+import { DrawerComponent } from "@/components/ShadCN/DrawerComponent";
 
 // EFEITO ESCRITA //
 
@@ -294,8 +296,9 @@ export default function ContactForm() {
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Projetos</h1>
-              <div className="flex items-center justify-center flex-col my-4">
-                <CarouselSpacing projects={projects} />
+              <div className="">
+
+                <DrawerComponent name="" description="" image="" technologies={}/>
               </div>
             </div>
           </div>
