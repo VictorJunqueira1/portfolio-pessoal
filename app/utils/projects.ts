@@ -21,7 +21,7 @@ export const projects: Project[] = [
 
 export type Project = {
     name: string;
-    image: string;
-    technologies: string[];
-    description: string
+    image?: string;
+    technologies?: string[];
+    description?: string
 }

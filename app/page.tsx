@@ -297,8 +297,6 @@ export default function ContactForm() {
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Projetos</h1>
               <div className="">
-
-                <DrawerComponent name="" description="" image="" technologies={}/>
               </div>
             </div>
           </div>
