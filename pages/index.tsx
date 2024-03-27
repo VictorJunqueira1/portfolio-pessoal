@@ -2,7 +2,6 @@
 import { CarouselPlugin } from "@/components/ShadCN/CarouselPlugin";
 import { Coins, Database, File, Github, Globe, Headphones, Linkedin, Smartphone } from "lucide-react";
 import Image from "next/image";
-import { projects } from "./utils/projects";
 import { useEffect, useState } from 'react';
 import { CarouselSpacing } from "@/components/ShadCN/CarouselSpacing";
 import { Drawer, DrawerClose, DrawerContent } from "@/components/ui/drawer";
@@ -77,7 +76,7 @@ export function Home() {
 }
 
 
-export default function ContactForm() {
+export default function Index() {
   const [name, setName] = useState('');
   const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
