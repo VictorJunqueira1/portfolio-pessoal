@@ -2,31 +2,35 @@
 export const projects: Project[] = [
     {
         name: "Conversor de Unidades", 
-        image: "/img/conversor-pic.png",
+        imageFront: "/img/conversor-pic.png",
+        imageDrawer: "/img/conversor-pic.png",
         technologies: ['HTML', 'CSS', 'Javascript'],
         description: "Um conversor de unidades é uma ferramenta que permite a conversão entre diferentes unidades de medida dentro de uma mesma categoria.",
         link: "https://measurement-converter.vercel.app/"
     },
     {
         name: "Gerador de Senhas", 
-        image: "/img/password-generator-pic.png",
+        imageFront: "/img/password-generator-pic.png",
+        imageDrawer: "/img/password-generator-pic.png",
         technologies: ['HTML', 'CSS', 'Javascript'],
-        description: "Testando...",
+        description: "Um gerador de senhas forte e automático é uma ferramenta digital projetada para criar senhas complexas e seguras que são difíceis de adivinhar ou quebrar por atacantes.",
         link: "https://password-generator-delta-blush.vercel.app/"
     },
     {
-        name: "Calculadora com Flask", 
-        image: "/img/calculator-py-pic.png",
+        name: "Calculadora Simples", 
+        imageFront: "/img/calculator-py-pic.png",
+        imageDrawer: "/img/calculator-py-pic.png",
         technologies: ['HTML', 'CSS', 'Python', 'Flask'],
-        description: "Testando...",
+        description: "Uma calculadora simples é um dispositivo eletrônico ou aplicativo de software projetado para realizar operações matemáticas básicas, como adição, subtração, multiplicação e divisão.",
         link: ""
     },
 ]
 
 export type Project = {
     name: string;
-    image: string;
+    imageFront: string;
+    imageDrawer: string;
     technologies: string[];
-    description: string;
+    description?: string;
     link: string
 }

@@ -297,18 +297,21 @@ export default function Index() {
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold mb-4">Projetos</h1>
               <div className="w-full h-1/2 light:bg-black light:text-white">
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-3 gap-24 pb-10">
                   {
                     projects.map((project, index) => {
                       return (
                         <div
-                          className="text-center flex justify-center items-center flex-col w-full h-full">
-                          <Image src={"/img/conversor-pic.png"} alt={"Teste"} width={400} height={400} className="rounded-md object-contain">
-                          </Image> <h4 className="text-2xl font-semibold mb-4 mt-4">{project.name}</h4>
-                          <p className="mb-4">
-                            {project.description}
-                          </p>
-                          <DrawerComponent description="Teste" image={"/img/conversor-pic.png"} link="https://measurement-converter.vercel.app/" name="Teste" technologies={project.technologies} techIndex={index} />
+                          className="text-center flex items-center flex-col w-full h-full relative ">
+                          <Image src={project.image} alt={"Teste"} width={400} height={400} className="rounded-md object-contain h-48">
+                          </Image>
+                          <div className="flex items-center flex-col">
+                            <h4 className="text-2xl font-semibold mb-4 mt-4">{project.name}</h4>
+                            <p className="mb-4">
+                              {project.description}
+                            </p>
+                          </div>
+                          <DrawerComponent image={project.image} link={project.link} name={project.name} technologies={project.technologies} techIndex={index} />
                         </div>
                       )
                     })

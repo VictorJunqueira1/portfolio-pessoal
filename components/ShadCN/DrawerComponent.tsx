@@ -14,7 +14,7 @@ type Props = {
   name: string;
   image: string;
   technologies: string[];
-  description: string;
+  description?: string;
   link: string;
   techIndex: number
 }
@@ -45,7 +45,7 @@ export function DrawerComponent({ name, description, image, technologies, link, 
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline" className="text-black" aria-label={`Mostrar detalhes do projeto ${name}`}>
+        <Button variant="outline" className="text-white bg-black border-neutral-700 absolute hover:text-white -bottom-14 hover:bg-neutral-900 border-2 transition-all duration-300" aria-label={`Mostrar detalhes do projeto ${name}`}>
           Mostrar Projeto
         </Button>
       </DrawerTrigger>
@@ -54,7 +54,7 @@ export function DrawerComponent({ name, description, image, technologies, link, 
           <DrawerHeader>
             <DrawerTitle className="text-3xl text-center">{name}</DrawerTitle>
             <DrawerDescription className="text-center font-semibold text-lg">
-              {renderTechnologies()}
+              Feito com: {renderTechnologies()}
             </DrawerDescription>
             <DrawerDescription className="text-center font-semibold">{description}</DrawerDescription>
             <DrawerDescription className="mt-4">
