@@ -49,7 +49,7 @@ export function DrawerComponent({ name, description, image, technologies, link, 
           Mostrar Projeto
         </Button>
       </DrawerTrigger>
-      <DrawerContent className="dark:bg-black bg-neutral-950 text-white dark:text-white border-green-500 md:w-2/4 h-1/2 w-full flex justify-center items-center mx-auto">
+      <DrawerContent className="dark:bg-black bg-neutral-950 text-white dark:text-white border-slate-700 md:w-2/4 h-1/2 w-full flex justify-center items-center mx-auto">
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
             <DrawerTitle className="text-3xl text-center">{name}</DrawerTitle>

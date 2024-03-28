@@ -312,7 +312,7 @@ export default function Index() {
                             </p>
                           </div>
                           <DrawerComponent image={project.imageDrawer} link={project.link} name={project.name} technologies={project.technologies} techIndex={index} />
-                        </div>
+                        </div> 
                       )
                     })
                   }
