@@ -303,7 +303,7 @@ export default function Index() {
                       return (
                         <div
                           className="text-center flex items-center flex-col w-full h-full relative ">
-                          <Image src={project.image} alt={"Teste"} width={400} height={400} className="rounded-md object-contain h-48">
+                          <Image src={project.imageFront} alt={"Teste"} width={400} height={400} className="rounded-md object-contain h-48">
                           </Image>
                           <div className="flex items-center flex-col">
                             <h4 className="text-2xl font-semibold mb-4 mt-4">{project.name}</h4>
@@ -311,7 +311,7 @@ export default function Index() {
                               {project.description}
                             </p>
                           </div>
-                          <DrawerComponent image={project.image} link={project.link} name={project.name} technologies={project.technologies} techIndex={index} />
+                          <DrawerComponent image={project.imageDrawer} link={project.link} name={project.name} technologies={project.technologies} techIndex={index} />
                         </div>
                       )
                     })

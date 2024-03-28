@@ -2,7 +2,7 @@
 export const projects: Project[] = [
     {
         name: "Conversor de Unidades", 
-        imageFront: "/img/conversor-pic.png",
+        imageFront: "/img/conversor-front.png",
         imageDrawer: "/img/conversor-pic.png",
         technologies: ['HTML', 'CSS', 'Javascript'],
         description: "Um conversor de unidades é uma ferramenta que permite a conversão entre diferentes unidades de medida dentro de uma mesma categoria.",
@@ -10,7 +10,7 @@ export const projects: Project[] = [
     },
     {
         name: "Gerador de Senhas", 
-        imageFront: "/img/password-generator-pic.png",
+        imageFront: "/img/password-front.png",
         imageDrawer: "/img/password-generator-pic.png",
         technologies: ['HTML', 'CSS', 'Javascript'],
         description: "Um gerador de senhas forte e automático é uma ferramenta digital projetada para criar senhas complexas e seguras que são difíceis de adivinhar ou quebrar por atacantes.",
@@ -18,8 +18,8 @@ export const projects: Project[] = [
     },
     {
         name: "Calculadora Simples", 
-        imageFront: "/img/calculator-py-pic.png",
-        imageDrawer: "/img/calculator-py-pic.png",
+        imageFront: "/img/calculator-front.png",
+        imageDrawer: "/img/calculator-drawer.png",
         technologies: ['HTML', 'CSS', 'Python', 'Flask'],
         description: "Uma calculadora simples é um dispositivo eletrônico ou aplicativo de software projetado para realizar operações matemáticas básicas, como adição, subtração, multiplicação e divisão.",
         link: ""
