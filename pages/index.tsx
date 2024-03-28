@@ -242,15 +242,15 @@ export default function Index() {
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Tecnologias</h1>
-              <div className="grid grid-cols-6 gap-4 my-4">
-                {/* <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 my-4">
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={90} src={"/img/html-logo.png"} alt="HTML5" />
                   <p className="text-xl">HTML5</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={90} src={"/img/css-logo.png"} alt="CSS3" />
                   <p className="text-xl">CSS3</p>
-                </div> */}
+                </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={90} src={"/img/javascript.png"} alt="Javascript" />
                   <p className="text-xl">Javascript</p>
@@ -275,18 +275,18 @@ export default function Index() {
                   <Image width={70} height={70} src={"/img/mysql.png"} alt="SQL" />
                   <p className="mt-4 text-xl">MySQL</p>
                 </div>
-                {/* <div className="h-full w-full bg-neutral-900  rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                <div className="h-full w-full bg-neutral-900  rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={100} height={100} src={"/img/postgresql.png"} alt="SQL" />
                   <p className="mt-2 text-xl">PostgreSQL</p>
-                </div> */}
-                {/* <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                </div>
+                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={70} src={"/img/git-logo.png"} alt="SQL" />
                   <p className="mt-2 text-xl">Git</p>
                 </div>
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={90} src={"/img/github-logo.png"} alt="SQL" />
                   <p className="mt-2 text-xl">Github</p>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>
