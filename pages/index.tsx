@@ -294,8 +294,9 @@ export default function Index() {
         <section className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
-              <h1 className="text-3xl font-semibold">Projetos</h1>
-              <div className="">
+              <h1 className="text-3xl font-semibold mb-4">Projetos</h1>
+              <div className="w-full h-1/2 light:bg-black light:text-white">
+                <DrawerComponent name="Conversor de unidades" description="Descrição do Projeto aqui" image={`/img/conversor-pic.png`} technologies={`Feito com: HTML CSS e Javascript`} link="https://password-generator-delta-blush.vercel.app/" /> 
               </div>
             </div>
           </div>
