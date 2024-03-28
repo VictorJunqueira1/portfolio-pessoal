@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { CarouselSpacing } from "@/components/ShadCN/CarouselSpacing";
 import { Drawer, DrawerClose, DrawerContent } from "@/components/ui/drawer";
 import { DrawerComponent } from "@/components/ShadCN/DrawerComponent";
+import { projects } from "@/app/utils/projects";
 
 // EFEITO ESCRITA //
 
@@ -146,7 +147,7 @@ export default function Index() {
               </div>
             </div>
             {/* // RODAPÉ DO CABEÇALHO // */}
-            <div className="absolute bottom-10 left-0 text-white flex gap-6">
+            <div className="absolute bottom-10 left-0 text-white flex gap-6 flex-col md:flex-row">
               <div>
                 <h3 className="text-lg font-semibold">Email</h3>
                 <a href="mailto:victorjunqueira.prog@gmail.com" className="text-md font-light">victorjunqueira.prog@gmail.com</a>
@@ -296,7 +297,23 @@ export default function Index() {
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold mb-4">Projetos</h1>
               <div className="w-full h-1/2 light:bg-black light:text-white">
-                <DrawerComponent name="Conversor de unidades" description="Descrição do Projeto aqui" image={`/img/conversor-pic.png`} technologies={`Feito com: HTML CSS e Javascript`} link="https://password-generator-delta-blush.vercel.app/" /> 
+                <div className="grid grid-cols-3">
+                  {
+                    projects.map((project, index) => {
+                      return (
+                        <div
+                          className="text-center flex justify-center items-center flex-col w-full h-full">
+                          <Image src={"/img/conversor-pic.png"} alt={"Teste"} width={400} height={400} className="rounded-md object-contain">
+                          </Image> <h4 className="text-2xl font-semibold mb-4 mt-4">{project.name}</h4>
+                          <p className="mb-4">
+                            {project.description}
+                          </p>
+                          <DrawerComponent description="Teste" image={"/img/conversor-pic.png"} link="https://measurement-converter.vercel.app/" name="Teste" technologies={project.technologies} techIndex={index} />
+                        </div>
+                      )
+                    })
+                  }
+                </div>
               </div>
             </div>
           </div>
