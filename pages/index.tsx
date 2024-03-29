@@ -1,12 +1,12 @@
 "use client"
-import { CarouselPlugin } from "@/components/ShadCN/CarouselPlugin";
-import { Coins, Database, File, Github, Globe, Headphones, Linkedin, Smartphone } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from 'react';
-import { CarouselSpacing } from "@/components/ShadCN/CarouselSpacing";
-import { Drawer, DrawerClose, DrawerContent } from "@/components/ui/drawer";
 import { DrawerComponent } from "@/components/ShadCN/DrawerComponent";
 import { projects } from "@/app/utils/projects";
+import AreaAutor from "@/components/Areas/AutorArea/AreaAutor";
+import Services from "@/components/Areas/ServicesArea/Services";
+import { Github, Linkedin } from "lucide-react";
+import TechnologiesArea from "@/components/Areas/TechnologiesArea/TecnhologiesArea";
 
 // EFEITO ESCRITA //
 
@@ -56,7 +56,7 @@ const TypewriterEffect = ({ phrases, loop = true }: props) => {
   }, [subIndex, index, reverse, phrases, loop]);
 
   return (
-    <h1 className="text-white font-semibold text-5xl">
+    <h1 className="text-white font-semibold text-3xl md:text-4xl xl:text-5xl">
       Eu sou <span>{`${phrases[index].substring(0, subIndex)}${blink ? "|" : " "}`}</span>
     </h1>
   );
@@ -165,132 +165,9 @@ export default function Index() {
             </div>
           </section>
         </div>
-        {/* // CUSTOMIZAÇÃO DA IMAGEM // */}
-        <section id="sobre" className="w-full bg-neutral-950 h-max">
-          <div className="mx-auto max-w-7xl flex flex-row py-12">
-            <div className="text-white w-1/3 ">
-              <img src="/img/Profile.jpeg" alt="Perfil do Autor" className="w-full h-96 object-cover" />
-            </div>
-            {/* ÁREA SOBRE O DESENVOLVEDOR  */}
-            <div className="text-white w-2/3 ml-12">
-              <h2 className="text-green-500 text-xl mb-2">Sobre mim</h2>
-              <h1 className="font-semibold text-2xl mb-2">Eu sou Victor Junqueira, desenvolvedor front-end...</h1>
-              <p>
-                Sou um desenvolvedor front-end, cujo interesse pelo desenvolvimento web foi despertado em 2022, quando iniciei meu curso de Desenvolvimento de Sistemas na prestigiosa ETEC Pedro Ferreira Alves. Apesar de estar no início da minha jornada profissional, já demonstro uma compreensão aprofundada e habilidades avançadas em tecnologias fundamentais para o setor.
-                <br />
-                <br />
-                Para enriquecer minha formação, dedico-me a cursos especializados na B7Web, uma instituição de renome por seu foco intensivo em desenvolvimento web e mobile. Essa busca constante por aprimoramento evidencia meu compromisso com a excelência e minha paixão por inovação.
-                <br />
-                <br />
-                Aliando minha expertise técnica à determinação constante por evolução, preparado para contribuir de maneira significativa e trilhar um caminho distinto no mundo da tecnologia.
-              </p>
-              {/* ÁREA DE INFORMAÇÕES E CONTATO  */}
-              <div className="h-0.5 w-full bg-green-500 my-6"></div>
-              <div className="grid grid-cols-2 mb-6 gap-3">
-                <h3 className="text-white"><strong>Nome: </strong>Victor Gustavo Junqueira</h3>
-                <h3 className="text-white"><strong>Idade: </strong>17 anos</h3>
-                <h3 className="text-white"><strong>Objetivo: </strong>Estágio</h3>
-                <h3 className="text-white"><strong>Área: </strong>Front-End</h3>
-              </div>
-              {/* LINK PARA DOWNLOAD DO CURRÍCULO */}
-              <a href="#" className="px-4 py-2 rounded-sm bg-green-500 text-black text-lg hover:text-neutral-00 transition-all duration-300">Download CV</a>
-            </div>
-          </div>
-        </section>
-        {/* SERVIÇOS OFERECIDOS  */}
-        <section className="w-full bg-neutral-950 h-max">
-          <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
-            <div className="w-full h-full">
-              <h1 className="text-3xl font-semibold">Meus Serviços</h1>
-              <div className="grid grid-cols-1 gap-4 my-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
-                <div className="bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700">
-                  <Globe className="text-green-500 w-12 h-12" />
-                  <h1 className="text-2xl font-semibold my-2">Desenvolvimento Web</h1>
-                  <p>Plataformas on-line, lojas virtuais e blogs.</p>
-                </div>
-                <div className="bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700">
-                  <Smartphone className="text-green-500 w-12 h-12" />
-                  <h1 className="text-2xl font-semibold my-2">Desenvolvimento Mobile</h1>
-                  <p>Aplicativos educacionais, plataformas de gerenciamento de conteúdo e entretenimento.</p>
-                </div>
-                <div className="bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700">
-                  <Database className="text-green-500 w-12 h-12" />
-                  <h1 className="text-2xl font-semibold my-2">Banco de Dados</h1>
-                  <p>Gerenciar e construir esquemas de bancos de dados relacionais e não relacionais.</p>
-                </div>
-                <div className="bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700">
-                  <Headphones className="text-green-500 w-12 h-12" />
-                  <h1 className="text-2xl font-semibold my-2">Suporte</h1>
-                  <p>Atendimento ao cliente dedicado e especializado.</p>
-                </div>
-                <div className="bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700">
-                  <File className="text-green-500 w-12 h-12" />
-                  <h1 className="text-2xl font-semibold my-2">Documentação e Artigos</h1>
-                  <p>Desenvolvimento de artigos de pesquisas e editais.</p>
-                </div>
-                <div className="bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700">
-                  <Coins className="text-green-500 w-12 h-12" />
-                  <h1 className="text-2xl font-semibold my-2">Vendas</h1>
-                  <p>Alavanque sua unidade de negócio com técnicas de vendas.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* TECNOLOGIAS EM CONHECIMENTO */}
-        <section id="habilidades" className="w-full bg-neutral-950 h-max">
-          <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
-            <div className="w-full h-full ">
-              <h1 className="text-3xl font-semibold">Tecnologias</h1>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 my-4">
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/html-logo.png"} alt="HTML5" />
-                  <p className="text-xl">HTML5</p>
-                </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/css-logo.png"} alt="CSS3" />
-                  <p className="text-xl">CSS3</p>
-                </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/javascript.png"} alt="Javascript" />
-                  <p className="text-xl">Javascript</p>
-                </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/typescript.png"} alt="Typescript" />
-                  <p className="text-xl">Typescript</p>
-                </div>
-                <div className="sm:pt-6 sm:pb-6 md:pt-6 md:pb-6 h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={95} height={100} src={"/img/react.png"} alt="ReactJS" />
-                  <p className="mt-2 text-xl">ReactJS</p>
-                </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/next.png"} alt="NextJS" />
-                  <p className="text-xl">NextJS</p>
-                </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/tailwind.png"} alt="TailwindCSS" />
-                  <p className="text-xl">TailwindCSS</p>
-                </div>
-                <div className="sm:pt-6 sm:pb-6 md:pt-6 md:pb-6 h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={70} height={70} src={"/img/mysql.png"} alt="SQL" />
-                  <p className="mt-4 text-xl">MySQL</p>
-                </div>
-                <div className="sm:pt-6 sm:pb-6 md:pt-6 md:pb-6 h-full w-full bg-neutral-900  rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={100} height={100} src={"/img/postgresql.png"} alt="SQL" />
-                  <p className="mt-2 text-xl">PostgreSQL</p>
-                </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={70} src={"/img/git-logo.png"} alt="SQL" />
-                  <p className="mt-2 text-xl">Git</p>
-                </div>
-                <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
-                  <Image width={90} height={90} src={"/img/github-logo.png"} alt="SQL" />
-                  <p className="mt-2 text-xl">Github</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AreaAutor />
+        <Services />
+        <TechnologiesArea />
         {/* ÁREA DE PROJETOS */}
         <section className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
@@ -312,7 +189,7 @@ export default function Index() {
                             </p>
                           </div>
                           <DrawerComponent image={project.imageDrawer} link={project.link} name={project.name} technologies={project.technologies} techIndex={index} />
-                        </div> 
+                        </div>
                       )
                     })
                   }
