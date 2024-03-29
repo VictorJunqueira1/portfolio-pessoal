@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from 'react';
 import { DrawerComponent } from "@/components/ShadCN/DrawerComponent";
 import { projects } from "@/app/utils/projects";
-import AreaAutor from "@/components/Areas/AutorArea/AreaAutor";
+import AreaAutor from "@/components/Areas/AutorArea/AutorArea";
 import Services from "@/components/Areas/ServicesArea/Services";
 import TechnologiesArea from "@/components/Areas/TechnologiesArea/TecnhologiesArea";
 import HeaderArea from "@/components/Areas/HeaderArea/HeaderArea";
@@ -93,7 +93,6 @@ export default function Index() {
             </div>
           </div>
         </section>
-
         {/* ÁREA DE FORMULÁRIO E CONTATO */}
         <section id="contato" className="w-full bg-neutral-900 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
@@ -125,8 +124,6 @@ export default function Index() {
             </div>
           </div>
         </section>
-
-        {/* Footer */}
         <FooterArea />
       </div>
     </div>
