@@ -30,9 +30,7 @@ export default function Index() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const validateEmail = (email: string) => {
-    return /\S+@\S+\.\S+/.test(email);
-  };
+  const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -47,15 +45,13 @@ export default function Index() {
       return;
     }
 
+    console.log('Formulário enviado:', { name, lastname, email, password });
     setError('');
-    alert('Formulário enviado com sucesso!');
     setName('');
     setLastName('');
     setEmail('');
     setPassword('');
   };
-
-
 
   // CÓDIGO DO PORTFÓLIO //
   return (
@@ -97,17 +93,12 @@ export default function Index() {
             </div>
           </div>
         </section>
-        <ContactArea 
-          name={name}
-          setName={setName}
-          lastname={lastname}
-          setLastName={setLastName}
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
+        <ContactArea
+          name={name} setName={setName}
+          lastname={lastname} setLastName={setLastName}
+          email={email} setEmail={setEmail}
+          password={password} setPassword={setPassword}
           error={error}
-          setError={setError}
           handleSubmit={handleSubmit}
         />
         <FooterArea />

@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 
-const ContactArea = () => {
-    const [name, setName] = useState('');
-    const [lastname, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
-    const [messageType, setMessageType] = useState('');
+const ContactArea: React.FC = () => {
+    const [name, setName] = useState<string>('');
+    const [lastname, setLastName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+    const [messageType, setMessageType] = useState<'error' | 'success'>('success');
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         if (!name || !lastname || !email || !password) {
             setMessage('Por favor, preencha todos os campos.');
             setMessageType('error');
             return;
         }
 
+        // Aqui você adicionaria a lógica de envio do formulário (e.g., requisição HTTP)
+
         setMessage('Formulário enviado com sucesso!');
         setMessageType('success');
-
         setName('');
         setLastName('');
         setEmail('');
         setPassword('');
-
-        console.log('Dados do formulário:', { name, lastname, email, password });
     };
 
     return (
