@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { DrawerComponent } from "@/components/ShadCN/DrawerComponent";
 import { projects } from "@/app/utils/projects";
 import AreaAutor from "@/components/Areas/AutorArea/AutorArea";
-import Services from "@/components/Areas/ServicesArea/Services";
+import Services from "@/components/Areas/ServicesArea/ServicesArea";
 import TechnologiesArea from "@/components/Areas/TechnologiesArea/TecnhologiesArea";
 import HeaderArea from "@/components/Areas/HeaderArea/HeaderArea";
 import FooterArea from "@/components/Areas/FooterArea/FooterArea";
@@ -94,10 +94,14 @@ export default function Index() {
           </div>
         </section>
         <ContactArea
-          name={name} setName={setName}
-          lastname={lastname} setLastName={setLastName}
-          email={email} setEmail={setEmail}
-          password={password} setPassword={setPassword}
+          name={name}
+          setName={setName}
+          lastname={lastname}
+          setLastName={setLastName}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
           error={error}
           handleSubmit={handleSubmit}
         />
