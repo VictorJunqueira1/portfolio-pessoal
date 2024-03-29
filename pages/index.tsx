@@ -136,7 +136,7 @@ export default function Index() {
             </nav>
           </header>
           {/* // CORPO DO CABEÇALHO // */}
-          <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative">
+          <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative sm:flex-wrap md:flex-wrap">
             <div className="flex flex-col gap-2 -mt-24">
               <h4 className="font-light text-white text-2xl">Olá!</h4>
               <TypewriterEffect phrases={['desenvolvedor web', 'desenvolvedor mobile', 'desenvolvedor Front-End']} loop={false} />
@@ -148,7 +148,7 @@ export default function Index() {
             </div>
             {/* // RODAPÉ DO CABEÇALHO // */}
             <div className="absolute bottom-10 left-0 text-white flex gap-6 flex-col md:flex-row">
-              <div>
+              <div className="">
                 <h3 className="text-lg font-semibold">Email</h3>
                 <a href="mailto:victorjunqueira.prog@gmail.com" className="text-md font-light">victorjunqueira.prog@gmail.com</a>
               </div>
@@ -202,7 +202,7 @@ export default function Index() {
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
               <h1 className="text-3xl font-semibold">Meus Serviços</h1>
-              <div className="grid grid-cols-3 gap-4 my-4">
+              <div className="grid grid-cols-1 gap-4 my-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                 <div className="bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700">
                   <Globe className="text-green-500 w-12 h-12" />
                   <h1 className="text-2xl font-semibold my-2">Desenvolvimento Web</h1>
@@ -240,9 +240,9 @@ export default function Index() {
         {/* TECNOLOGIAS EM CONHECIMENTO */}
         <section id="habilidades" className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
-            <div className="w-full h-full">
+            <div className="w-full h-full ">
               <h1 className="text-3xl font-semibold">Tecnologias</h1>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 my-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 my-4">
                 <div className="h-full w-full bg-neutral-900 p-8 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={90} height={90} src={"/img/html-logo.png"} alt="HTML5" />
                   <p className="text-xl">HTML5</p>
@@ -259,7 +259,7 @@ export default function Index() {
                   <Image width={90} height={90} src={"/img/typescript.png"} alt="Typescript" />
                   <p className="text-xl">Typescript</p>
                 </div>
-                <div className="h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                <div className="sm:pt-6 sm:pb-6 md:pt-6 md:pb-6 h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={95} height={100} src={"/img/react.png"} alt="ReactJS" />
                   <p className="mt-2 text-xl">ReactJS</p>
                 </div>
@@ -271,11 +271,11 @@ export default function Index() {
                   <Image width={90} height={90} src={"/img/tailwind.png"} alt="TailwindCSS" />
                   <p className="text-xl">TailwindCSS</p>
                 </div>
-                <div className="h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                <div className="sm:pt-6 sm:pb-6 md:pt-6 md:pb-6 h-full w-full bg-neutral-900 rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={70} height={70} src={"/img/mysql.png"} alt="SQL" />
                   <p className="mt-4 text-xl">MySQL</p>
                 </div>
-                <div className="h-full w-full bg-neutral-900  rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
+                <div className="sm:pt-6 sm:pb-6 md:pt-6 md:pb-6 h-full w-full bg-neutral-900  rounded-md shadow-sm shadow-neutral-700 flex flex-col gap-4 items-center justify-center">
                   <Image width={100} height={100} src={"/img/postgresql.png"} alt="SQL" />
                   <p className="mt-2 text-xl">PostgreSQL</p>
                 </div>
@@ -295,9 +295,9 @@ export default function Index() {
         <section className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
             <div className="w-full h-full">
-              <h1 className="text-3xl font-semibold mb-4">Projetos</h1>
+              <h1 className="text-3xl font-semibold mb-12 text-center">Projetos</h1>
               <div className="w-full h-1/2 light:bg-black light:text-white">
-                <div className="grid grid-cols-3 gap-24 pb-10">
+                <div className="grid grid-cols-1 gap-24 pb-10 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                   {
                     projects.map((project, index) => {
                       return (
