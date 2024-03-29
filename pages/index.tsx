@@ -62,7 +62,6 @@ export default function Index() {
         <AreaAutor />
         <Services />
         <TechnologiesArea />
-        
         {/* ÁREA DE PROJETOS */}
         <section className="w-full bg-neutral-950 h-max">
           <div className="mx-auto max-w-7xl flex flex-row py-12 text-white">
@@ -74,6 +73,7 @@ export default function Index() {
                     projects.map((project, index) => {
                       return (
                         <div
+                          key={project.id}
                           className="text-center flex items-center flex-col w-full h-full relative ">
                           <Image src={project.imageFront} alt={"Teste"} width={400} height={400} className="rounded-md object-contain h-48">
                           </Image>
