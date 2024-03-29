@@ -8,7 +8,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Project, projects } from "@/app/utils/projects";
+import { projects } from "@/app/utils/projects";
+import Image from 'next/image';
 
 type Props = {
   name: string;
@@ -22,11 +23,11 @@ type Props = {
 export function DrawerComponent({ name, description, image, technologies, link, techIndex }: Props) {
   const renderTechnologies = () => {
     const lastItemOfArray = projects[techIndex].technologies.length - 1
-    const techsArray =  projects[techIndex].technologies
-    let finalResult = ""   
-    
-    for(let tech = 0; tech <= lastItemOfArray; tech++){
-      if(tech === (lastItemOfArray - 1)){
+    const techsArray = projects[techIndex].technologies
+    let finalResult = ""
+
+    for (let tech = 0; tech <= lastItemOfArray; tech++) {
+      if (tech === (lastItemOfArray - 1)) {
         finalResult += techsArray[tech] + " e "
       } else if (tech === lastItemOfArray) {
         finalResult += techsArray[tech] + "."
@@ -36,11 +37,6 @@ export function DrawerComponent({ name, description, image, technologies, link, 
     }
     return finalResult;
   }
-  // {projects.map((element, index) => {
-  //   return (
-  //     renderTechnologies(index)
-  //   )
-  // })}
 
   return (
     <Drawer>
@@ -58,7 +54,12 @@ export function DrawerComponent({ name, description, image, technologies, link, 
             </DrawerDescription>
             <DrawerDescription className="text-center font-semibold">{description}</DrawerDescription>
             <DrawerDescription className="mt-4">
-              <img src={image} alt={name} className="w-full object-cover" />
+              <Image
+                src={image} 
+                alt={name}
+                width={999}
+                height={999} 
+              />
             </DrawerDescription>
             {link && (
               <DrawerDescription className="text-center">
