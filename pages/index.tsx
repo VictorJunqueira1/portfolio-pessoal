@@ -27,7 +27,7 @@ export default function Index() {
   const [name, setName] = useState('');
   const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
   const validateEmail = (email: string) => /\S+@\S+\.\S+/.test(email);
@@ -35,7 +35,7 @@ export default function Index() {
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
-    if (!name || !lastname || !email || !password) {
+    if (!name || !lastname || !email || !message) {
       setError('Por favor, preencha todos os campos.');
       return;
     }
@@ -45,12 +45,12 @@ export default function Index() {
       return;
     }
 
-    console.log('Formulário enviado:', { name, lastname, email, password });
+    console.log('Formulário enviado:', { name, lastname, email, message });
     setError('');
     setName('');
     setLastName('');
     setEmail('');
-    setPassword('');
+    setMessage('');
   };
 
   // CÓDIGO DO PORTFÓLIO //
@@ -100,8 +100,8 @@ export default function Index() {
           setLastName={setLastName}
           email={email}
           setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
+          message={message}
+          setMessage={setMessage}
           error={error}
           handleSubmit={handleSubmit}
         />

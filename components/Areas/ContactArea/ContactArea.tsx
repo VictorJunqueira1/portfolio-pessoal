@@ -7,8 +7,8 @@ interface ContactAreaProps {
     setLastName: React.Dispatch<React.SetStateAction<string>>;
     email: string;
     setEmail: React.Dispatch<React.SetStateAction<string>>;
-    password: string;
-    setPassword: React.Dispatch<React.SetStateAction<string>>;
+    message: string; 
+    setMessage: React.Dispatch<React.SetStateAction<string>>;
     error: string;
     handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
@@ -20,8 +20,8 @@ const ContactArea: React.FC<ContactAreaProps> = ({
     setLastName,
     email,
     setEmail,
-    password,
-    setPassword,
+    message, 
+    setMessage, 
     error,
     handleSubmit
 }) => {
@@ -47,7 +47,13 @@ const ContactArea: React.FC<ContactAreaProps> = ({
                         </label>
                         <label className="w-full mb-6">
                             Mensagem:
-                            <textarea placeholder="Deixe sua mensagem" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-2 mt-2 bg-transparent border-2 border-gray-500 hover:border-green-500 text-white focus:border-green-500 focus:outline-none transition-colors" rows="4"></textarea>
+                            <textarea
+                                placeholder="Deixe sua mensagem"
+                                value={message}
+                                onChange={e => setMessage(e.target.value)}
+                                className="w-full p-2 mt-2 bg-transparent border-2 border-gray-500 hover:border-green-500 text-white focus:border-green-500 focus:outline-none transition-colors"
+                                rows={7}
+                            ></textarea>
                         </label>
                         <button type="submit" className="mt-6 w-36 h-12 bg-green-500 hover:bg-green-600 transition-colors text-lg font-semibold rounded-md shadow-md">Enviar</button>
                     </form>
