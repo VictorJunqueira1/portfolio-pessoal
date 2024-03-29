@@ -56,11 +56,10 @@ const TypewriterEffect = ({ phrases, loop = true }: props) => {
 const HeaderArea = () => {
     return (
         <div className="mx-auto max-w-7xl">
-            {/* CABEÇALHO */}
             <header>
-                <nav className="flex items-center justify-between text-white h-24">
+                <nav className="flex items-center justify-between text-white h-24 px-4 sm:px-6 lg:px-8">
                     <h1 className="hover:text-green-500 hover:shadow-sm text-lg transition duration-300 ease-in">Portfólio</h1>
-                    <ul className="flex flex-row gap-12 text-lg">
+                    <ul className="flex flex-row gap-4 sm:gap-8 lg:gap-12 text-base sm:text-lg">
                         <li><a href="#inicio" className="hover:text-green-500 transition duration-300 ease-in">Início</a></li>
                         <li><a href="#sobre" className="hover:text-green-500 transition duration-300 ease-in">Sobre</a></li>
                         <li><a href="#habilidades" className="hover:text-green-500 transition duration-300 ease-in">Habilidades</a></li>
@@ -68,36 +67,31 @@ const HeaderArea = () => {
                     </ul>
                 </nav>
             </header>
-            {/* CORPO DO CABEÇALHO */}
-            <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative sm:flex-wrap md:flex-wrap">
+            <section style={{ height: "calc(100vh - 96px)" }} className="w-full flex justify-center items-start flex-col relative sm:flex-wrap md:flex-wrap px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col gap-2 -mt-24">
                     <h4 className="font-light text-white text-2xl">Olá!</h4>
-                    {/* Certifique-se de substituir 'TypewriterEffect' pelo componente correto que você está usando */}
                     <TypewriterEffect phrases={['desenvolvedor web', 'desenvolvedor mobile', 'desenvolvedor Front-End']} loop={false} />
                     <p className="font-light text-white text-2xl">Especializado em Sites Responsivos</p>
                     <div className="gap-6 flex">
                         <a href="https://www.linkedin.com/in/victor-junqueira-789004281/" className="hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 hover:bg-black border-2 transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center rounded-sm bg-transparent text-white text-lg gap-4">
-                            {/* Substitua '<Linkedin>' pelo componente de ícone apropriado */}
                             <div><Linkedin /></div>LinkedIn
                         </a>
                         <a href="https://github.com/VictorJunqueira1" className="hover:border-green-500 w-36 shadow-md hover:shadow-stone-700 border-gray-400 border-2 hover:bg-black transition-all ease-in-out duration-500 hover:text-white h-12 flex justify-center items-center rounded-sm bg-transparent text-white text-lg gap-4">
-                            {/* Substitua '<Github>' pelo componente de ícone apropriado */}
                             <div><Github /></div>Github
                         </a>
                     </div>
                 </div>
-                {/* RODAPÉ DO CABEÇALHO */}
-                <div className="absolute bottom-10 left-0 text-white flex gap-6 flex-col md:flex-row">
+                <div className="absolute bottom-10 left-0 text-white flex gap-6 flex-col md:flex-row px-4 sm:px-6 lg:px-8">
                     <div>
                         <h3 className="text-lg font-semibold">Email</h3>
                         <a href="mailto:victorjunqueira.prog@gmail.com" className="text-md font-light">victorjunqueira.prog@gmail.com</a>
                     </div>
-                    <div className="h-18 w-0.5 bg-white"></div>
+                    <div className="h-18 w-0.5 bg-white hidden md:block"></div>
                     <div>
                         <h3 className="text-lg font-semibold">Telefone</h3>
                         <a href="tel:+55 (19) 997116-8299" className="text-md font-light">+55 (19) 99716-8299</a>
                     </div>
-                    <div className="h-18 w-0.5 bg-white"></div>
+                    <div className="h-18 w-0.5 bg-white hidden md:block"></div>
                     <div>
                         <h3 className="text-lg font-semibold">Localização</h3>
                         <p className="text-md font-light">Mogi-Guaçu, SP</p>
